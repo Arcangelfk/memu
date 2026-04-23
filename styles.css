@@ -374,3 +374,73 @@ body {
     flex-direction: column;
   }
 }
+
+/* Promo Modal */
+.promo-modal {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.promo-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.promo-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  transform: scale(0.8);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.promo-modal.show .promo-content {
+  transform: scale(1);
+}
+
+.promo-img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(255, 106, 0, 0.5);
+  border: 2px solid var(--fire);
+}
+
+.close-promo {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  color: #fff;
+  background-color: var(--fire);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 106, 0, 0.8);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1001;
+  line-height: 1;
+}
+
+.close-promo:hover {
+  transform: scale(1.1) rotate(90deg);
+  background-color: var(--gold);
+}

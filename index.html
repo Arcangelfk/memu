@@ -8,6 +8,14 @@
 </head>
 <body>
 
+  <!-- Promo Modal -->
+  <div id="promoModal" class="promo-modal">
+    <div class="promo-content">
+      <span class="close-promo" id="closePromo">&times;</span>
+      <img src="promocion.jpg" alt="Promoción del Día" class="promo-img">
+    </div>
+  </div>
+
   <!-- Particles container -->
   <div class="sparks-container" id="sparks"></div>
 
@@ -562,6 +570,26 @@
     }, observerOptions);
 
     fadeElements.forEach(el => observer.observe(el));
+
+    // Promo Modal Logic
+    const promoModal = document.getElementById('promoModal');
+    const closePromo = document.getElementById('closePromo');
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        promoModal.classList.add('show');
+      }, 800);
+    });
+
+    closePromo.addEventListener('click', () => {
+      promoModal.classList.remove('show');
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === promoModal) {
+        promoModal.classList.remove('show');
+      }
+    });
   </script>
 </body>
 </html>
