@@ -577,78 +577,176 @@
 
   </div>
 
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/573127929078" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-    <svg viewBox="0 0 32 32" class="whatsapp-icon">
-      <path d="M16.002 0C7.178 0 0.013 7.165 0.013 15.99c0 2.812 0.735 5.556 2.133 7.978L0 32l8.225-2.158c2.329 1.284 4.965 1.961 7.766 1.962h0.006c8.822 0 15.986-7.165 15.986-15.991 0-4.276-1.666-8.293-4.686-11.314C24.275 1.48 20.264 0 16.002 0z" fill="#25D366"></path>
-      <path d="M16.002 2.686c3.559 0 6.906 1.386 9.423 3.904 2.516 2.518 3.903 5.867 3.903 9.401 0 7.338-5.972 13.31-13.31 13.31h-0.005c-2.385-0.001-4.721-0.618-6.772-1.785l-0.485-0.276-5.034 1.32 1.341-4.908-0.304-0.482c-1.28-2.029-1.956-4.385-1.956-6.816 0-7.34 5.975-13.313 13.315-13.313m0-2.686c-8.823 0-15.987 7.165-15.987 15.99 0 2.812 0.735 5.556 2.133 7.978L0 32l8.225-2.158c2.329 1.284 4.965 1.961 7.766 1.962h0.006c8.822 0 15.986-7.165 15.986-15.991 0-4.276-1.666-8.293-4.686-11.314C24.275 1.48 20.264 0 16.002 0z" fill="#fff"></path>
-      <path d="M22.569 18.232c-0.36-0.18-2.13-1.052-2.459-1.172-0.33-0.12-0.57-0.18-0.81 0.18-0.24 0.36-0.93 1.172-1.141 1.412-0.21 0.24-0.42 0.27-0.78 0.09-0.36-0.18-1.521-0.561-2.898-1.788-1.071-0.954-1.794-2.132-2.004-2.492-0.21-0.36-0.022-0.554 0.158-0.734 0.162-0.162 0.36-0.421 0.54-0.631 0.18-0.21 0.24-0.36 0.36-0.6 0.12-0.24 0.06-0.451-0.03-0.631-0.09-0.18-0.81-1.954-1.11-2.674-0.292-0.704-0.589-0.608-0.81-0.619-0.21-0.01-0.45-0.012-0.69-0.012-0.24 0-0.63 0.09-0.96 0.45-0.33 0.36-1.26 1.232-1.26 3.003s1.29 3.484 1.47 3.724c0.18 0.24 2.54 3.878 6.15 5.34 0.86 0.344 1.531 0.549 2.053 0.704 0.862 0.274 1.646 0.235 2.264 0.142 0.694-0.104 2.13-0.871 2.43-1.712 0.3-0.841 0.3-1.562 0.21-1.712-0.09-0.151-0.33-0.241-0.69-0.421z" fill="#fff"></path>
+  <!-- Cart Float Button -->
+  <button class="cart-float" id="cartFloat" onclick="openCartModal()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="cart-icon-svg">
+      <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
     </svg>
-  </a>
+    <span class="cart-badge" id="cartBadge">0</span>
+  </button>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2>🛒 Tu Pedido</h2>
+        <button class="modal-close" onclick="closeCartModal()">&times;</button>
+      </div>
+      <div id="cartItems" class="cart-items-list"></div>
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal" class="cart-total-price">$0</span>
+      </div>
+      <button class="btn-accept" onclick="openTableModal()">✔ Aceptar Pedido</button>
+    </div>
+  </div>
+
+  <!-- Table Modal -->
+  <div id="tableModal" class="modal-overlay">
+    <div class="modal-box modal-box--small">
+      <div class="modal-header">
+        <h2>📋 Mesa</h2>
+        <button class="modal-close" onclick="closeTableModal()">&times;</button>
+      </div>
+      <p class="modal-sub">Ingresa el número de tu mesa para continuar:</p>
+      <input type="number" id="tableInput" class="table-input" placeholder="Ej: 5" min="1">
+      <p id="tableError" class="table-error" style="display:none">⚠ Por favor ingresa el número de mesa.</p>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeTableModal()">Cancelar</button>
+        <button class="btn-send" onclick="sendToWhatsApp()">📲 Enviar por WhatsApp</button>
+      </div>
+    </div>
+  </div>
 
   <script>
-    // Partículas de chispas
+    // ── Sparks ──────────────────────────────────────────────
     const sparksContainer = document.getElementById('sparks');
-    const sparkCount = 40;
-
-    for (let i = 0; i < sparkCount; i++) {
+    for (let i = 0; i < 40; i++) {
       const spark = document.createElement('div');
       spark.classList.add('spark');
-
-      // Random properties
       const size = Math.random() * 3 + 2;
-      const left = Math.random() * 100;
-      const duration = Math.random() * 5 + 3; // 3 to 8 seconds
-      const delay = Math.random() * 5;
-      const drift = (Math.random() - 0.5) * 200; // -100px to 100px
-
       spark.style.width = `${size}px`;
       spark.style.height = `${size}px`;
-      spark.style.left = `${left}vw`;
-      spark.style.animationDuration = `${duration}s`;
-      spark.style.animationDelay = `${delay}s`;
-      spark.style.setProperty('--drift', `${drift}px`);
-
+      spark.style.left = `${Math.random() * 100}vw`;
+      spark.style.animationDuration = `${Math.random() * 5 + 3}s`;
+      spark.style.animationDelay = `${Math.random() * 5}s`;
+      spark.style.setProperty('--drift', `${(Math.random() - 0.5) * 200}px`);
       sparksContainer.appendChild(spark);
     }
 
-    // Scroll Fade Up Observer
-    const fadeElements = document.querySelectorAll('.fade-up');
+    // ── Fade Up Observer ─────────────────────────────────────
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    fadeElements.forEach(el => observer.observe(el));
-
-    // Promo Modal Logic
+    // ── Promo Modal ──────────────────────────────────────────
     const promoModal = document.getElementById('promoModal');
     const closePromo = document.getElementById('closePromo');
+    window.addEventListener('load', () => setTimeout(() => promoModal.classList.add('show'), 800));
+    closePromo.addEventListener('click', () => promoModal.classList.remove('show'));
+    window.addEventListener('click', e => { if (e.target === promoModal) promoModal.classList.remove('show'); });
 
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        promoModal.classList.add('show');
-      }, 800);
+    // ── Cart State ───────────────────────────────────────────
+    let cart = [];
+
+    function fmtPrice(n) { return '$' + n.toLocaleString('es-CO'); }
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateBadge();
+      const btn = document.getElementById('cartFloat');
+      btn.style.transform = 'scale(1.3)';
+      setTimeout(() => btn.style.transform = '', 300);
+    }
+
+    function removeFromCart(idx) {
+      cart.splice(idx, 1);
+      updateBadge();
+      renderCartItems();
+    }
+
+    function updateBadge() {
+      const b = document.getElementById('cartBadge');
+      b.textContent = cart.length;
+      b.style.display = cart.length > 0 ? 'flex' : 'none';
+    }
+
+    // ── Cart Modal ───────────────────────────────────────────
+    function openCartModal() {
+      renderCartItems();
+      document.getElementById('cartModal').classList.add('show');
+    }
+    function closeCartModal() { document.getElementById('cartModal').classList.remove('show'); }
+
+    function renderCartItems() {
+      const container = document.getElementById('cartItems');
+      const totalEl = document.getElementById('cartTotal');
+      if (cart.length === 0) {
+        container.innerHTML = '<div class="cart-empty">😔 Tu carrito está vacío.<br>¡Agrega productos del menú!</div>';
+        totalEl.textContent = '$0'; return;
+      }
+      let total = 0;
+      container.innerHTML = cart.map((item, i) => {
+        total += item.price;
+        return `<div class="cart-item">
+          <span class="cart-item-name">${item.name}</span>
+          <span class="cart-item-price">${fmtPrice(item.price)}</span>
+          <button class="cart-item-remove" onclick="removeFromCart(${i})" title="Eliminar">✕</button>
+        </div>`;
+      }).join('');
+      totalEl.textContent = fmtPrice(total);
+    }
+
+    // ── Table Modal ──────────────────────────────────────────
+    function openTableModal() {
+      if (cart.length === 0) return;
+      closeCartModal();
+      document.getElementById('tableInput').value = '';
+      document.getElementById('tableError').style.display = 'none';
+      document.getElementById('tableModal').classList.add('show');
+    }
+    function closeTableModal() { document.getElementById('tableModal').classList.remove('show'); }
+
+    function sendToWhatsApp() {
+      const mesa = document.getElementById('tableInput').value.trim();
+      if (!mesa) { document.getElementById('tableError').style.display = 'block'; return; }
+      let msg = `🍽️ *NUEVO PEDIDO - Carbón y Sazón*\n📍 *Mesa: ${mesa}*\n\n*Productos:*\n`;
+      let total = 0;
+      cart.forEach((item, i) => { msg += `  ${i+1}. ${item.name} — ${fmtPrice(item.price)}\n`; total += item.price; });
+      msg += `\n💰 *TOTAL: ${fmtPrice(total)}*`;
+      window.open(`https://wa.me/573127929078?text=${encodeURIComponent(msg)}`, '_blank');
+      cart = []; updateBadge(); closeTableModal();
+    }
+
+    // ── Inject Add-to-Cart Buttons ───────────────────────────
+    const cartSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>`;
+
+    document.querySelectorAll('.card').forEach(card => {
+      const name = card.querySelector('.card-title')?.textContent.trim();
+      const price = parseInt((card.querySelector('.price')?.textContent || '').replace(/\D/g, ''));
+      const footer = card.querySelector('.card-footer');
+      if (footer && name && price) {
+        const btn = document.createElement('button');
+        btn.className = 'add-to-cart-btn';
+        btn.innerHTML = cartSVG;
+        btn.title = 'Agregar al carrito';
+        btn.onclick = () => addToCart(name, price);
+        footer.appendChild(btn);
+      }
     });
 
-    closePromo.addEventListener('click', () => {
-      promoModal.classList.remove('show');
-    });
-
-    window.addEventListener('click', (e) => {
-      if (e.target === promoModal) {
-        promoModal.classList.remove('show');
+    document.querySelectorAll('.drink-item').forEach(item => {
+      const name = item.querySelector('.drink-name')?.textContent.trim();
+      const price = parseInt((item.querySelector('.drink-price')?.textContent || '').replace(/\D/g, ''));
+      if (name && price) {
+        const btn = document.createElement('button');
+        btn.className = 'add-to-cart-btn add-to-cart-btn--small';
+        btn.innerHTML = cartSVG;
+        btn.title = 'Agregar al carrito';
+        btn.onclick = () => addToCart(name, price);
+        item.appendChild(btn);
       }
     });
   </script>
