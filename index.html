@@ -606,7 +606,7 @@
   <div id="checkoutModal" class="modal-overlay">
     <div class="modal-box">
       <div class="modal-header">
-        <h2>🚀 Finalizar Pedido</h2>
+        <h2>Finalizar Pedido</h2>
         <button class="modal-close" onclick="closeCheckoutModal()">&times;</button>
       </div>
       
@@ -658,6 +658,18 @@
       <div class="modal-actions modal-actions--center">
         <button class="btn-send btn-send--compact" onclick="handleCheckout()">Enviar</button>
       </div>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-content">
+      <div class="loader-logo-container">
+        <img src="logo.jpeg" alt="Logo" class="loader-logo">
+      </div>
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Confirmando tu pedido...</p>
+      <p class="loader-subtext">Sabor que nace del fuego</p>
     </div>
   </div>
 
@@ -830,31 +842,41 @@
     }
 
     function sendToWhatsApp(customerData) {
-      let msg = `🍽️ *NUEVO PEDIDO - Carbón y Sazón*\n`;
-      
-      if (customerData.type === 'Mesa') {
-        msg += `📍 *Tipo:* Consumo en Local\n🪑 *Mesa:* ${customerData.mesa}\n`;
-      } else {
-        msg += `🛵 *Tipo:* Domicilio\n👤 *Nombre:* ${customerData.name}\n📱 *Celular:* ${customerData.phone}\n🏠 *Dirección:* ${customerData.address}\n🏘️ *Barrio:* ${customerData.neighborhood}\n`;
-      }
+      const loader = document.getElementById('loadingOverlay');
+      loader.classList.add('show');
 
-      msg += `\n━━━━━━━━━━━━━━━━━━━━\n🛒 *PRODUCTOS:*\n`;
-      
-      let total = 0;
-      cart.forEach((item, i) => { 
-        const subtotal = item.price * item.quantity;
-        msg += `• ${item.name} x${item.quantity} — ${fmtPrice(subtotal)}\n`; 
-        total += subtotal; 
-      });
+      setTimeout(() => {
+        let msg = `*RESUMEN DE PEDIDO - Carbón y Sazón*\n`;
+        msg += `------------------------------------------\n`;
+        
+        if (customerData.type === 'Mesa') {
+          msg += `*TIPO:* Consumo en Local\n*MESA:* ${customerData.mesa}\n`;
+        } else {
+          msg += `*TIPO:* Domicilio\n*CLIENTE:* ${customerData.name}\n*TELÉFONO:* ${customerData.phone}\n*DIRECCIÓN:* ${customerData.address}\n*BARRIO:* ${customerData.neighborhood}\n`;
+        }
 
-      msg += `━━━━━━━━━━━━━━━━━━━━\n💰 *TOTAL A PAGAR: ${fmtPrice(total)}*`;
-      
-      const whatsappNumber = "573127929078"; 
-      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`, '_blank');
-      
-      cart = []; 
-      updateBadge(); 
-      closeCheckoutModal();
+        msg += `------------------------------------------\n`;
+        msg += `*DETALLE DE PRODUCTOS:*\n`;
+        
+        let total = 0;
+        cart.forEach((item) => { 
+          const subtotal = item.price * item.quantity;
+          msg += `- ${item.name} (x${item.quantity}): ${fmtPrice(subtotal)}\n`; 
+          total += subtotal; 
+        });
+
+        msg += `------------------------------------------\n`;
+        msg += `*TOTAL A COBRAR: ${fmtPrice(total)}*\n`;
+        msg += `------------------------------------------\n`;
+        
+        const whatsappNumber = "573127929078"; 
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+        
+        cart = []; 
+        updateBadge(); 
+        closeCheckoutModal();
+        loader.classList.remove('show');
+      }, 2000);
     }
 
     // ── Inject Add-to-Cart Buttons ───────────────────────────
