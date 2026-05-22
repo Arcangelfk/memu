@@ -10,13 +10,23 @@
 
 <body>
 
-  <!-- Promo Modal -->
-  <div id="promoModal" class="promo-modal">
+  <!--
+       ==============================================================
+       PROMO MODAL (DESACTIVADO - OCULTO)
+
+       Para volver a ACTIVAR la ventana de promocion al cargar la pagina:
+       1. Elimine este bloque de comentario completo y reemplacelo con el div de abajo sin comentar.
+       2. Vaya al JavaScript al final del archivo y quite las dos barras de la linea:
+          "window.addEventListener load setTimeout promoModal classList add show"
+       ==============================================================
+
+  <div id="promoModal" class="promo-modal" style="display:none">
     <div class="promo-content">
-      <span class="close-promo" id="closePromo">&times;</span>
-      <img src="promocion.jpg" alt="Promoción del Día" class="promo-img"> <!-- cambiar imagen de promociones -->
+      <span class="close-promo" id="closePromo">X</span>
+      <img src="promocion.jpg" alt="Promocion del Dia" class="promo-img">
     </div>
   </div>
+  -->
 
   <!-- Particles container -->
   <div class="sparks-container" id="sparks"></div>
@@ -49,18 +59,21 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">CHORIPERRO</h3>
-            <p class="card-desc">Chorizo de las brisas, queso, ripio, cebolla caramelizada, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Chorizo de las brisas, queso, ripio, cebolla caramelizada, lechuga, salsas de la casa.
+            </p>
             <div class="card-footer"><span class="price">$14.000</span></div>
           </div>
         </article>
 
         <article class="card">
           <div class="card-img-wrapper">
-            <img src="https://via.placeholder.com/600x400?text=CHORIPERRO+ESPECIAL" alt="CHORIPERRO ESPECIAL" class="card-img">
+            <img src="https://via.placeholder.com/600x400?text=CHORIPERRO+ESPECIAL" alt="CHORIPERRO ESPECIAL"
+              class="card-img">
           </div>
           <div class="card-content">
             <h3 class="card-title">CHORIPERRO ESPECIAL</h3>
-            <p class="card-desc">Chorizo de cerdo de la casa o chorizo de las brisas, pollo desmechado, carne de res desmechada, queso, ripio, cebolla caramelizada, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Chorizo de cerdo de la casa o chorizo de las brisas, pollo desmechado, carne de res
+              desmechada, queso, ripio, cebolla caramelizada, lechuga, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$17.000</span></div>
           </div>
         </article>
@@ -71,7 +84,8 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">SALCHIPAPA</h3>
-            <p class="card-desc">Papas a la francesa, salchicha americana, tocineta, queso, ripio, huevo de codorniz, salsas de la casa.</p>
+            <p class="card-desc">Papas a la francesa, salchicha americana, tocineta, queso, ripio, huevo de codorniz,
+              salsas de la casa.</p>
             <div class="card-footer"><span class="price">$14.000</span></div>
           </div>
         </article>
@@ -82,7 +96,8 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">SALCHIPOLLO</h3>
-            <p class="card-desc">Papas a la francesa, salchicha americana, pollo desmechado, tocineta, queso, ripio, huevo de codorniz, salsas de la casa.</p>
+            <p class="card-desc">Papas a la francesa, salchicha americana, pollo desmechado, tocineta, queso, ripio,
+              huevo de codorniz, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$18.000</span></div>
           </div>
         </article>
@@ -93,7 +108,8 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">SALCHICARNE</h3>
-            <p class="card-desc">Papas a la francesa, salchicha americana, carne de res desmechada, tocineta, queso, ripio, huevo de codorniz, salsas de la casa.</p>
+            <p class="card-desc">Papas a la francesa, salchicha americana, carne de res desmechada, tocineta, queso,
+              ripio, huevo de codorniz, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$18.000</span></div>
           </div>
         </article>
@@ -104,7 +120,8 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">CHORIPAPA</h3>
-            <p class="card-desc">Papas a la francesa, chorizo de las brisas, tocineta, queso, ripio, huevo de codorniz, salsas de la casa.</p>
+            <p class="card-desc">Papas a la francesa, chorizo de las brisas, tocineta, queso, ripio, huevo de codorniz,
+              salsas de la casa.</p>
             <div class="card-footer"><span class="price">$15.000</span></div>
           </div>
         </article>
@@ -115,7 +132,8 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">SALCHIMIXTA</h3>
-            <p class="card-desc">CPapas a la francesa, salchicha americana, chorizo de las brisas, pollo desmechado, carne de res desmechada, tocineta, queso, ripio, huevo de codorniz, salsas de la casa.</p>
+            <p class="card-desc">CPapas a la francesa, salchicha americana, chorizo de las brisas, pollo desmechado,
+              carne de res desmechada, tocineta, queso, ripio, huevo de codorniz, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$25.000</span></div>
           </div>
         </article>
@@ -126,51 +144,61 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">SALCHIMOSTER</h3>
-            <p class="card-desc">Papas a la francesa, salchicha americana, chorizo de las brisas, pollo desmechado, carne de res desmechada, trocitos de costilla de cerdo ahumadas, tocineta, madurito frito, maíz tierno, queso, ripio, huevos de codorniz, salsas de la casa.</p>
+            <p class="card-desc">Papas a la francesa, salchicha americana, chorizo de las brisas, pollo desmechado,
+              carne de res desmechada, trocitos de costilla de cerdo ahumadas, tocineta, madurito frito, maíz tierno,
+              queso, ripio, huevos de codorniz, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$40.000</span></div>
           </div>
         </article>
 
         <article class="card">
           <div class="card-img-wrapper">
-            <img src="https://via.placeholder.com/600x400?text=BURRITO+SENCILLO" alt="BURRITO SENCILLO" class="card-img">
+            <img src="https://via.placeholder.com/600x400?text=BURRITO+SENCILLO" alt="BURRITO SENCILLO"
+              class="card-img">
           </div>
           <div class="card-content">
             <h3 class="card-title">BURRITO SENCILLO</h3>
-            <p class="card-desc">Tortilla, trozos de cerdo a la plancha, madurito frito, queso, cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Tortilla, trozos de cerdo a la plancha, madurito frito, queso, cebolla caramelizada,
+              tomate, lechuga, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$16.000</span></div>
           </div>
         </article>
 
         <article class="card">
           <div class="card-img-wrapper">
-            <img src="https://via.placeholder.com/600x400?text=BURRITO+ESPECIAL" alt="BURRITO ESPECIAL" class="card-img">
+            <img src="https://via.placeholder.com/600x400?text=BURRITO+ESPECIAL" alt="BURRITO ESPECIAL"
+              class="card-img">
           </div>
           <div class="card-content">
             <h3 class="card-title">BURRITO ESPECIAL</h3>
-            <p class="card-desc">Tortilla, trozos de cerdo a la plancha, madurito frito, tocineta, maíz tierno, queso, cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Tortilla, trozos de cerdo a la plancha, madurito frito, tocineta, maíz tierno, queso,
+              cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$16.000</span></div>
           </div>
         </article>
 
         <article class="card">
           <div class="card-img-wrapper">
-            <img src="https://via.placeholder.com/600x400?text=BURRITO+MEGA+ESPECIAL" alt="BURRITO MEGA ESPECIAL" class="card-img">
+            <img src="https://via.placeholder.com/600x400?text=BURRITO+MEGA+ESPECIAL" alt="BURRITO MEGA ESPECIAL"
+              class="card-img">
           </div>
           <div class="card-content">
             <h3 class="card-title">BURRITO MEGA ESPECIAL</h3>
-            <p class="card-desc">Tortilla, trozos de cerdo a la plancha, madurito frito, chorizo de las brisas, queso, cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Tortilla, trozos de cerdo a la plancha, madurito frito, chorizo de las brisas, queso,
+              cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$16.000</span></div>
           </div>
         </article>
 
         <article class="card">
           <div class="card-img-wrapper">
-            <img src="https://via.placeholder.com/600x400?text=MAZORCADA+DE+LA+CASA" alt="MAZORCADA DE LA CASA" class="card-img">
+            <img src="https://via.placeholder.com/600x400?text=MAZORCADA+DE+LA+CASA" alt="MAZORCADA DE LA CASA"
+              class="card-img">
           </div>
           <div class="card-content">
             <h3 class="card-title">MAZORCADA DE LA CASA</h3>
-            <p class="card-desc">Trozos de cerdo a la plancha, carne de res desmechada, chorizo de las brisas, tocineta, maíz tierno, papas a la francesa, queso, ripio, cebolla, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Trozos de cerdo a la plancha, carne de res desmechada, chorizo de las brisas, tocineta,
+              maíz tierno, papas a la francesa, queso, ripio, cebolla, lechuga, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$23.000</span></div>
           </div>
         </article>
@@ -181,7 +209,8 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">PATACONAZO</h3>
-            <p class="card-desc">Patacón, carne de res desmechada, pollo desmechado, chorizo de las brisas, tocineta, gratinado de queso con maíz tierno, ripio, salsas de la casa.</p>
+            <p class="card-desc">Patacón, carne de res desmechada, pollo desmechado, chorizo de las brisas, tocineta,
+              gratinado de queso con maíz tierno, ripio, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$18.000</span></div>
           </div>
         </article>
@@ -192,7 +221,8 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">PICADA CRAZY</h3>
-            <p class="card-desc">Arepa picada, chorizo de la casa picado, carne de hamburguesa picada, pollo desmechado, carne de res desmechada, relleno de rancho, huevos de codorniz, queso, ripio, salsas de la casa.</p>
+            <p class="card-desc">Arepa picada, chorizo de la casa picado, carne de hamburguesa picada, pollo desmechado,
+              carne de res desmechada, relleno de rancho, huevos de codorniz, queso, ripio, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$28.000</span></div>
           </div>
         </article>
@@ -316,7 +346,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">AREPA CON BBQ</h3>
-            <p class="card-desc">Trozos de cerdo en salsa bbq, chicharrón, queso, huevo de codorniz, mantequilla y sal.</p>
+            <p class="card-desc">Trozos de cerdo en salsa bbq, chicharrón, queso, huevo de codorniz, mantequilla y sal.
+            </p>
             <div class="card-footer"><span class="price">$14.000</span></div>
           </div>
         </article>
@@ -324,7 +355,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">AREPA FITNESS</h3>
-            <p class="card-desc">Atún, queso, huevo de codorniz, cebolla de tallo picada, tomate picado, salsa especial de la casa, mantequilla y sal.</p>
+            <p class="card-desc">Atún, queso, huevo de codorniz, cebolla de tallo picada, tomate picado, salsa especial
+              de la casa, mantequilla y sal.</p>
             <div class="card-footer"><span class="price">$14.000</span></div>
           </div>
         </article>
@@ -332,7 +364,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">AREPA BURGUER</h3>
-            <p class="card-desc">Carne de hamburguesa, jamón, queso, tomate, lechuga, salsa de la casa, mantequilla y sal.</p>
+            <p class="card-desc">Carne de hamburguesa, jamón, queso, tomate, lechuga, salsa de la casa, mantequilla y
+              sal.</p>
             <div class="card-footer"><span class="price">$14.000</span></div>
           </div>
         </article>
@@ -348,7 +381,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">AREPA DE LA CASA</h3>
-            <p class="card-desc">Pollo, carne de res, trozos de cerdo en salsa bbq, chorizo, queso, chicharrón, huevo de codorniz, mantequilla y sal.</p>
+            <p class="card-desc">Pollo, carne de res, trozos de cerdo en salsa bbq, chorizo, queso, chicharrón, huevo de
+              codorniz, mantequilla y sal.</p>
             <div class="card-footer"><span class="price">$16.000</span></div>
           </div>
         </article>
@@ -356,7 +390,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">AREPA DEL RANCHO</h3>
-            <p class="card-desc">Pollo, carne de res, trozos de cerdo, chorizo, maíz tierno, chicharrón, queso, huevo de codorniz, mantequilla y sal.</p>
+            <p class="card-desc">Pollo, carne de res, trozos de cerdo, chorizo, maíz tierno, chicharrón, queso, huevo de
+              codorniz, mantequilla y sal.</p>
             <div class="card-footer"><span class="price">$16.000</span></div>
           </div>
         </article>
@@ -364,7 +399,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">AREPA MEXICANA</h3>
-            <p class="card-desc">Carne de res, trozos de cerdo en salsa bbq, pico de gallo con jalapeños, guacamole, huevo de codorniz, mantequilla y sal.</p>
+            <p class="card-desc">Carne de res, trozos de cerdo en salsa bbq, pico de gallo con jalapeños, guacamole,
+              huevo de codorniz, mantequilla y sal.</p>
             <div class="card-footer"><span class="price">$16.000</span></div>
           </div>
         </article>
@@ -372,7 +408,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">AREPA MONTAÑERA</h3>
-            <p class="card-desc">Costilla de cerdo desmechada, Carne de res, relleno de rancho, madurito frito, chicharrón, guacamole, huevo de codorniz, mantequilla y sal.</p>
+            <p class="card-desc">Costilla de cerdo desmechada, Carne de res, relleno de rancho, madurito frito,
+              chicharrón, guacamole, huevo de codorniz, mantequilla y sal.</p>
             <div class="card-footer"><span class="price">$16.000</span></div>
           </div>
         </article>
@@ -380,7 +417,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">AREPA PAISA</h3>
-            <p class="card-desc">Carne de res, chorizo, maíz tierno, huevo frito, madurito frito, chicharrón, queso, salsa de la casa, mantequilla y sal.</p>
+            <p class="card-desc">Carne de res, chorizo, maíz tierno, huevo frito, madurito frito, chicharrón, queso,
+              salsa de la casa, mantequilla y sal.</p>
             <div class="card-footer"><span class="price">$16.000</span></div>
           </div>
         </article>
@@ -388,7 +426,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">AREPA MARINERA</h3>
-            <p class="card-desc">Camarones, palmitos, queso, salsa especial de la casa, mantequilla y sal, acompañada de cubitos de aguacate y tomate con limón.</p>
+            <p class="card-desc">Camarones, palmitos, queso, salsa especial de la casa, mantequilla y sal, acompañada de
+              cubitos de aguacate y tomate con limón.</p>
             <div class="card-footer"><span class="price">$18.000</span></div>
           </div>
         </article>
@@ -411,7 +450,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">BURGUER SENCILLA</h3>
-            <p class="card-desc">Carne de hamburguesa a la parrilla, queso, ripio, cebolla caramelizada, tomate, lechuga y salsas de la casa.</p>
+            <p class="card-desc">Carne de hamburguesa a la parrilla, queso, ripio, cebolla caramelizada, tomate, lechuga
+              y salsas de la casa.</p>
             <div class="card-footer"><span class="price">$13.000</span></div>
           </div>
         </article>
@@ -419,7 +459,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">BÚRGUER ESPECIAL</h3>
-            <p class="card-desc">Carne de hamburguesa a la parrilla, tocineta, maíz tierno, queso, ripio, cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Carne de hamburguesa a la parrilla, tocineta, maíz tierno, queso, ripio, cebolla
+              caramelizada, tomate, lechuga, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$16.000</span></div>
           </div>
         </article>
@@ -427,7 +468,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">BÚRGUER DE LA CASA</h3>
-            <p class="card-desc">Carne de hamburguesa a la parrilla, huevo frito, maíz tierno, queso, ripio, cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Carne de hamburguesa a la parrilla, huevo frito, maíz tierno, queso, ripio, cebolla
+              caramelizada, tomate, lechuga, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$16.000</span></div>
           </div>
         </article>
@@ -435,7 +477,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">BURGUER KIUT</h3>
-            <p class="card-desc">Carne de hamburguesa a la parrilla, trozos de cerdo en salsa bbq, queso, ripio, cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Carne de hamburguesa a la parrilla, trozos de cerdo en salsa bbq, queso, ripio, cebolla
+              caramelizada, tomate, lechuga, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$19.000</span></div>
           </div>
         </article>
@@ -443,7 +486,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">FULL BÚRGUER</h3>
-            <p class="card-desc">Carne de hamburguesa a la parrilla, pollo desmechado, carne de res desmechada, queso, ripio, cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Carne de hamburguesa a la parrilla, pollo desmechado, carne de res desmechada, queso,
+              ripio, cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$19.000</span></div>
           </div>
         </article>
@@ -451,7 +495,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">SUPER BÚRGUER</h3>
-            <p class="card-desc">Carne de hamburguesa a la parrilla, queso gratinado con maíz tierno y pollo desmechado, tocineta, ripio, cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Carne de hamburguesa a la parrilla, queso gratinado con maíz tierno y pollo desmechado,
+              tocineta, ripio, cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$20.000</span></div>
           </div>
         </article>
@@ -459,7 +504,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">PODEROSA BÚRGUER</h3>
-            <p class="card-desc">Carne de hamburguesa a la parrilla, trozos de cerdo a la plancha, chorizo de las brisas, tocineta, huevo frito, ripio, cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Carne de hamburguesa a la parrilla, trozos de cerdo a la plancha, chorizo de las
+              brisas, tocineta, huevo frito, ripio, cebolla caramelizada, tomate, lechuga, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$24.000</span></div>
           </div>
         </article>
@@ -467,7 +513,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">MELA BURGUER</h3>
-            <p class="card-desc">Carne de hamburguesa a la parrilla, lomo de cerdo a la plancha, tocineta, piña caramelizada asada, queso asado, cebolla fresca, tomate, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Carne de hamburguesa a la parrilla, lomo de cerdo a la plancha, tocineta, piña
+              caramelizada asada, queso asado, cebolla fresca, tomate, lechuga, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$24.000</span></div>
           </div>
         </article>
@@ -475,7 +522,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">PERRO SENCILLO</h3>
-            <p class="card-desc">Salchicha americana, queso, ripio, cebolla caramelizada, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Salchicha americana, queso, ripio, cebolla caramelizada, lechuga, salsas de la casa.
+            </p>
             <div class="card-footer"><span class="price">$12.000</span></div>
           </div>
         </article>
@@ -483,7 +531,8 @@
         <article class="card">
           <div class="card-content">
             <h3 class="card-title">PERRO ESPECIAL</h3>
-            <p class="card-desc">Salchicha americana, tocineta, maíz tierno, queso, ripio, cebolla caramelizada, lechuga, salsas de la casa.</p>
+            <p class="card-desc">Salchicha americana, tocineta, maíz tierno, queso, ripio, cebolla caramelizada,
+              lechuga, salsas de la casa.</p>
             <div class="card-footer"><span class="price">$15.000</span></div>
           </div>
         </article>
@@ -500,40 +549,76 @@
 
       <div class="cards-grid">
         <article class="card">
-          <div class="card-content"><h3 class="card-title">Queso (1 LONJA)</h3><div class="card-footer"><span class="price">$2.000</span></div></div>
+          <div class="card-content">
+            <h3 class="card-title">Queso (1 LONJA)</h3>
+            <div class="card-footer"><span class="price">$2.000</span></div>
+          </div>
         </article>
         <article class="card">
-          <div class="card-content"><h3 class="card-title">Jamón (1 LONJA)</h3><div class="card-footer"><span class="price">$2.000</span></div></div>
+          <div class="card-content">
+            <h3 class="card-title">Jamón (1 LONJA)</h3>
+            <div class="card-footer"><span class="price">$2.000</span></div>
+          </div>
         </article>
         <article class="card">
-          <div class="card-content"><h3 class="card-title">Piña</h3><div class="card-footer"><span class="price">$4.000</span></div></div>
+          <div class="card-content">
+            <h3 class="card-title">Piña</h3>
+            <div class="card-footer"><span class="price">$4.000</span></div>
+          </div>
         </article>
         <article class="card">
-          <div class="card-content"><h3 class="card-title">Maíz tierno</h3><div class="card-footer"><span class="price">$4.000</span></div></div>
+          <div class="card-content">
+            <h3 class="card-title">Maíz tierno</h3>
+            <div class="card-footer"><span class="price">$4.000</span></div>
+          </div>
         </article>
         <article class="card">
-          <div class="card-content"><h3 class="card-title">Madurito frito</h3><div class="card-footer"><span class="price">$4.000</span></div></div>
+          <div class="card-content">
+            <h3 class="card-title">Madurito frito</h3>
+            <div class="card-footer"><span class="price">$4.000</span></div>
+          </div>
         </article>
         <article class="card">
-          <div class="card-content"><h3 class="card-title">Huevos (6 UND)</h3><div class="card-footer"><span class="price">$4.000</span></div></div>
+          <div class="card-content">
+            <h3 class="card-title">Huevos (6 UND)</h3>
+            <div class="card-footer"><span class="price">$4.000</span></div>
+          </div>
         </article>
         <article class="card">
-          <div class="card-content"><h3 class="card-title">Chicharrón (50GR)</h3><div class="card-footer"><span class="price">$5.000</span></div></div>
+          <div class="card-content">
+            <h3 class="card-title">Chicharrón (50GR)</h3>
+            <div class="card-footer"><span class="price">$5.000</span></div>
+          </div>
         </article>
         <article class="card">
-          <div class="card-content"><h3 class="card-title">Pollo (50GR)</h3><div class="card-footer"><span class="price">$5.000</span></div></div>
+          <div class="card-content">
+            <h3 class="card-title">Pollo (50GR)</h3>
+            <div class="card-footer"><span class="price">$5.000</span></div>
+          </div>
         </article>
         <article class="card">
-          <div class="card-content"><h3 class="card-title">Carne de res (50GR)</h3><div class="card-footer"><span class="price">$5.000</span></div></div>
+          <div class="card-content">
+            <h3 class="card-title">Carne de res (50GR)</h3>
+            <div class="card-footer"><span class="price">$5.000</span></div>
+          </div>
         </article>
         <article class="card">
-          <div class="card-content"><h3 class="card-title">Cerdo bbq (50GR)</h3><div class="card-footer"><span class="price">$5.000</span></div></div>
+          <div class="card-content">
+            <h3 class="card-title">Cerdo bbq (50GR)</h3>
+            <div class="card-footer"><span class="price">$5.000</span></div>
+          </div>
         </article>
         <article class="card">
-          <div class="card-content"><h3 class="card-title">Mollejas (50GR)</h3><div class="card-footer"><span class="price">$5.000</span></div></div>
+          <div class="card-content">
+            <h3 class="card-title">Mollejas (50GR)</h3>
+            <div class="card-footer"><span class="price">$5.000</span></div>
+          </div>
         </article>
         <article class="card">
-          <div class="card-content"><h3 class="card-title">Papas a la francesa</h3><div class="card-footer"><span class="price">$6.000</span></div></div>
+          <div class="card-content">
+            <h3 class="card-title">Papas a la francesa</h3>
+            <div class="card-footer"><span class="price">$6.000</span></div>
+          </div>
         </article>
       </div>
     </section>
@@ -547,9 +632,12 @@
       </div>
 
       <div class="drinks-list">
-        <div class="drink-item"><span class="drink-name">Vaso de panelada de la casa</span><span class="drink-price">$2.500</span></div>
-        <div class="drink-item"><span class="drink-name">1/2 jarra de panelada de la casa</span><span class="drink-price">$6.000</span></div>
-        <div class="drink-item"><span class="drink-name">Jarra de panelada de la casa</span><span class="drink-price">$12.000</span></div>
+        <div class="drink-item"><span class="drink-name">Vaso de panelada de la casa</span><span
+            class="drink-price">$2.500</span></div>
+        <div class="drink-item"><span class="drink-name">1/2 jarra de panelada de la casa</span><span
+            class="drink-price">$6.000</span></div>
+        <div class="drink-item"><span class="drink-name">Jarra de panelada de la casa</span><span
+            class="drink-price">$12.000</span></div>
         <div class="drink-item">
           <div class="drink-info">
             <span class="drink-name">Jugos naturales (copa cristal) en AGUA</span>
@@ -573,10 +661,14 @@
         </div>
         <div class="drink-item"><span class="drink-name">Soda</span><span class="drink-price">$3.000</span></div>
         <div class="drink-item"><span class="drink-name">Agua</span><span class="drink-price">$3.000</span></div>
-        <div class="drink-item"><span class="drink-name">Gaseosa personal</span><span class="drink-price">$4.000</span></div>
-        <div class="drink-item"><span class="drink-name">Cerveza águila lata</span><span class="drink-price">$4.500</span></div>
-        <div class="drink-item"><span class="drink-name">Jugo hit personal</span><span class="drink-price">$4.000</span></div>
-        <div class="drink-item"><span class="drink-name">Jugo hit litro</span><span class="drink-price">$7.000</span></div>
+        <div class="drink-item"><span class="drink-name">Gaseosa personal</span><span class="drink-price">$4.000</span>
+        </div>
+        <div class="drink-item"><span class="drink-name">Cerveza águila lata</span><span
+            class="drink-price">$4.500</span></div>
+        <div class="drink-item"><span class="drink-name">Jugo hit personal</span><span class="drink-price">$4.000</span>
+        </div>
+        <div class="drink-item"><span class="drink-name">Jugo hit litro</span><span class="drink-price">$7.000</span>
+        </div>
         <div class="drink-item"><span class="drink-name">Gaseosa</span><span class="drink-price">$8.000</span></div>
       </div>
     </section>
@@ -606,45 +698,47 @@
 
   </div>
 
-  <!-- Bottom Navigation Bar -->
+  <!-- Bottom Navigation Menu (Estilo iPhone) -->
   <nav class="bottom-nav">
     <a href="#comidas-rapidas" class="nav-tab active">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-icon-svg">
-        <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
-        <path d="M7 2v20"></path>
-        <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
+      <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 10h14l-1 10H6L5 10z" />
+        <path d="M8 10V5M12 10V3M16 10V6" />
       </svg>
       <span class="nav-label">Rápidas</span>
     </a>
     <a href="#arepas" class="nav-tab">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-icon-svg">
-        <circle cx="12" cy="12" r="10"></circle>
-        <path d="M8 9h8"></path>
-        <path d="M7 12h10"></path>
-        <path d="M8 15h8"></path>
+      <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M8 9h8M8 12h8M8 15h8" />
       </svg>
       <span class="nav-label">Arepas</span>
     </a>
     <a href="#hamburguesas" class="nav-tab">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-icon-svg">
-        <path d="M3 11h18a1 1 0 0 0 1-1a9 9 0 0 0-20 0a1 1 0 0 0 1 1Z"></path>
-        <path d="M2 14h20"></path>
-        <path d="M3 17h18a3 3 0 0 1 3 3v1H0v-1a3 3 0 0 1 3-3Z"></path>
+      <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 11c0-4.5 3-7 9-7s9 2.5 9 7H3z" />
+        <path d="M2 13h20M3 16c0 3 3 5 9 5s9-2 9-5H3z" />
       </svg>
-      <span class="nav-label">Burgers</span>
+      <span class="nav-label">Burguers</span>
     </a>
     <a href="#adiciones" class="nav-tab">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-icon-svg">
-        <line x1="12" y1="5" x2="12" y2="19"></line>
-        <line x1="5" y1="12" x2="19" y2="12"></line>
+      <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="16"></line>
+        <line x1="8" y1="12" x2="16" y2="12"></line>
       </svg>
       <span class="nav-label">Adiciones</span>
     </a>
     <a href="#bebidas" class="nav-tab">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-icon-svg">
-        <path d="M6 8h12L16 22H8Z"></path>
-        <path d="m9 2 3 6"></path>
-        <path d="M18 5H6"></path>
+      <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 8h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2" />
+        <path d="M5 8h12l-1 12H6L5 8z" />
+        <line x1="12" y1="8" x2="14" y2="2" />
       </svg>
       <span class="nav-label">Bebidas</span>
     </a>
@@ -652,8 +746,10 @@
 
   <!-- Cart Float Button -->
   <button class="cart-float" id="cartFloat" onclick="openCartModal()">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="cart-icon-svg">
-      <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round" class="cart-icon-svg">
+      <circle cx="9" cy="21" r="1"></circle>
+      <circle cx="20" cy="21" r="1"></circle>
       <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
     </svg>
     <span class="cart-badge" id="cartBadge">0</span>
@@ -682,14 +778,25 @@
         <h2>Finalizar Pedido</h2>
         <button class="modal-close" onclick="closeCheckoutModal()">&times;</button>
       </div>
-      
+
       <div class="checkout-tabs">
         <button class="tab-btn active" onclick="switchTab('mesa')">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3h18v18H3z" />
+            <path d="M3 9h18" />
+            <path d="M9 21V9" />
+          </svg>
           Mesa
         </button>
         <button class="tab-btn" onclick="switchTab('domicilio')">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polyline points="16 8 20 8 23 11 23 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13" />
+            <polyline points="16 8 20 8 23 11 23 16 16 16" />
+            <circle cx="5.5" cy="18.5" r="2.5" />
+            <circle cx="18.5" cy="18.5" r="2.5" />
+          </svg>
           Domicilio
         </button>
       </div>
@@ -698,7 +805,14 @@
       <div id="mesaSection" class="checkout-section active">
         <p class="modal-sub">Ingresa el número de tu mesa:</p>
         <div class="input-with-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="field-icon"><path d="M4 2v20"/><path d="M20 2v20"/><path d="M4 12h16"/><path d="M4 7h16"/><path d="M4 17h16"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="field-icon">
+            <path d="M4 2v20" />
+            <path d="M20 2v20" />
+            <path d="M4 12h16" />
+            <path d="M4 7h16" />
+            <path d="M4 17h16" />
+          </svg>
           <input type="number" id="tableInput" class="checkout-input" placeholder="Ej: 5" min="1">
         </div>
       </div>
@@ -708,26 +822,43 @@
         <p class="modal-sub">Completa tus datos para el envío:</p>
         <div class="input-group">
           <div class="input-with-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="field-icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="field-icon">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
             <input type="text" id="deliveryName" class="checkout-input" placeholder="Nombre completo">
           </div>
           <div class="input-with-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="field-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="field-icon">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
             <input type="tel" id="deliveryPhone" class="checkout-input" placeholder="Celular / WhatsApp">
           </div>
           <div class="input-with-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="field-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="field-icon">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
             <input type="text" id="deliveryAddress" class="checkout-input" placeholder="Dirección exacta">
           </div>
           <div class="input-with-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="field-icon"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="field-icon">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
             <input type="text" id="deliveryNeighborhood" class="checkout-input" placeholder="Barrio">
           </div>
         </div>
       </div>
 
-      <p id="checkoutError" class="table-error" style="display:none">⚠ Por favor completa todos los campos requeridos.</p>
-      
+      <p id="checkoutError" class="table-error" style="display:none">⚠ Por favor completa todos los campos requeridos.
+      </p>
+
       <div class="modal-actions modal-actions--center">
         <button class="btn-send btn-send--compact" onclick="handleCheckout()">Enviar</button>
       </div>
@@ -763,12 +894,18 @@
     }
 
 
-    // ── Promo Modal ──────────────────────────────────────────
+    // ── Promo Modal (DESACTIVADO) ─────────────────────────────
+    // Para reactivar la ventana emergente al iniciar la página:
+    // 1. Asegúrese de descomentar el HTML correspondiente arriba en este archivo.
+    // 2. Descomente la siguiente línea de código JS (quite las dos barras "//" al inicio):
+    // window.addEventListener('load', () => setTimeout(() => { if (promoModal) promoModal.classList.add('show'); }, 800));
+
     const promoModal = document.getElementById('promoModal');
     const closePromo = document.getElementById('closePromo');
-    window.addEventListener('load', () => setTimeout(() => promoModal.classList.add('show'), 800));
-    closePromo.addEventListener('click', () => promoModal.classList.remove('show'));
-    window.addEventListener('click', e => { if (e.target === promoModal) promoModal.classList.remove('show'); });
+    if (promoModal && closePromo) {
+      closePromo.addEventListener('click', () => promoModal.classList.remove('show'));
+      window.addEventListener('click', e => { if (e.target === promoModal) promoModal.classList.remove('show'); });
+    }
 
     // ── Cart State ───────────────────────────────────────────
     let cart = [];
@@ -866,7 +1003,7 @@
       document.getElementById('deliveryAddress').value = '';
       document.getElementById('deliveryNeighborhood').value = '';
       document.getElementById('checkoutError').style.display = 'none';
-      
+
       switchTab('mesa'); // Default tab
       document.getElementById('checkoutModal').classList.add('show');
     }
@@ -916,7 +1053,7 @@
       setTimeout(() => {
         let msg = `*RESUMEN DE PEDIDO - Carbón y Sazón*\n`;
         msg += `------------------------------------------\n`;
-        
+
         if (customerData.type === 'Mesa') {
           msg += `*TIPO:* Consumo en Local\n*MESA:* ${customerData.mesa}\n`;
         } else {
@@ -925,23 +1062,23 @@
 
         msg += `------------------------------------------\n`;
         msg += `*DETALLE DE PRODUCTOS:*\n`;
-        
+
         let total = 0;
-        cart.forEach((item) => { 
+        cart.forEach((item) => {
           const subtotal = item.price * item.quantity;
-          msg += `- ${item.name} (x${item.quantity}): ${fmtPrice(subtotal)}\n`; 
-          total += subtotal; 
+          msg += `- ${item.name} (x${item.quantity}): ${fmtPrice(subtotal)}\n`;
+          total += subtotal;
         });
 
         msg += `------------------------------------------\n`;
         msg += `*TOTAL A COBRAR: ${fmtPrice(total)}*\n`;
         msg += `------------------------------------------\n`;
-        
-        const whatsappNumber = "573127929078"; 
+
+        const whatsappNumber = "573127929078";
         window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`, '_blank');
-        
-        cart = []; 
-        updateBadge(); 
+
+        cart = [];
+        updateBadge();
         closeCheckoutModal();
         loader.classList.remove('show');
       }, 2000);
@@ -977,31 +1114,29 @@
       }
     });
 
-    // ── Bottom Nav Scroll Spy ────────────────────────────────
-    const navTabs = document.querySelectorAll('.nav-tab');
+    // ── Bottom Navigation Scroll Spy ─────────────────────────
     const sections = document.querySelectorAll('section[id]');
+    const navTabs = document.querySelectorAll('.bottom-nav .nav-tab');
 
-    function updateActiveTab() {
-      let currentSectionId = '';
-      sections.forEach(sec => {
-        const top = sec.offsetTop - 155;
-        if (window.scrollY >= top) {
-          currentSectionId = sec.getAttribute('id');
-        }
-      });
-      
-      navTabs.forEach(tab => {
-        const href = tab.getAttribute('href');
-        if (href === `#${currentSectionId}`) {
-          tab.classList.add('active');
-        } else {
-          tab.classList.remove('active');
+    function activeMenuOnScroll() {
+      let scrollY = window.pageYOffset + 150; // offset for active trigger
+
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop;
+        const sectionId = current.getAttribute('id');
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navTabs.forEach(tab => {
+            tab.classList.remove('active');
+            if (tab.getAttribute('href') === '#' + sectionId) {
+              tab.classList.add('active');
+            }
+          });
         }
       });
     }
-
-    window.addEventListener('scroll', updateActiveTab);
-    window.addEventListener('load', updateActiveTab);
+    window.addEventListener('scroll', activeMenuOnScroll);
   </script>
 </body>
 
